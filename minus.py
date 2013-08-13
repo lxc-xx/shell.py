@@ -16,7 +16,9 @@ result = open(sys.argv[3],'w')
 exist_set = set(subtrahend.readlines())
 
 for line in minuend.readlines():
-    if not line in exist_set:
+    if line in exist_set:
+        exist_set.remove(line)
+    else:
         result.write(line)
 
 result.close()
