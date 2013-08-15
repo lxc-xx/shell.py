@@ -19,5 +19,8 @@ list = open(list_path,'r')
 
 for path in list.readlines():
     path = path.strip('\n')
-    shutil.copy(path, target_path)
+    try:
+        shutil.copy(path, target_path)
+    except IOError:
+        sys.stderr.write(path+'\n')
 
