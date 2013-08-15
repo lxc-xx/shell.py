@@ -22,5 +22,5 @@ for path in list.readlines():
     try:
         shutil.copy(path, target_path)
     except IOError:
-        sys.stderr.write(path+'\n')
+        sys.stderr.write('Failed: 'path+'\n')
 

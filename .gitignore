@@ -1,4 +1,3 @@
-*.py[cod]
 
 # C extensions
 *.so
@@ -25,6 +24,7 @@ pip-log.txt
 .coverage
 .tox
 nosetests.xml
+test/
 
 # Translations
 *.mo
@@ -33,3 +33,5 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+
