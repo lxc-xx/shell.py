@@ -7,5 +7,5 @@ shell.py
 
 * cpl.py: Copy files in a list
 * minus.py: Minus a file using another file
-* tree.py: Not finished now
-* led.py: Not finished now
+* tree.py: Print a tree structure of given path
+* led.py: Process a file line by line using Python code
