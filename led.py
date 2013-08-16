@@ -13,7 +13,6 @@ def main(argv):
         sys.exit(1)
 
     if len(args) != 2:
-        print args
         print err_output
         sys.exit(1)
     
