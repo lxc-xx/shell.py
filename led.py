@@ -8,8 +8,8 @@ def main(argv):
     err_output = help_output
     try:
         opts, args = getopt.getopt(argv, "f", ["help"])
-    except getopt.GetoptError as err:
-        print err
+    except getopt.GetoptError:
+        print err_output
         sys.exit(1)
 
     if len(args) != 2:
