@@ -9,33 +9,36 @@ def main(argv):
         sys.exit(1)
     path = argv[0]
     path = path.rstrip('/')
-    explore(path, 0, [1])
+    explore(path, -1, [], True)
 
-def explore(path, depth, pres):
+def explore(path, depth, pres, is_top = False):
+    #print pres
     basename = os.path.basename(path)
     is_dir = os.path.isdir(path)
-    
-    d = depth
-    line_list = []
-    
-    is_floor = True
-    while d >= 0:
-        if pres[d] <= 0: 
-            if is_floor: 
-                line_list.append('__')
+
+    line_list = [] 
+    if not is_top: 
+        d = depth 
+        is_floor = True 
+        while d >= 0: 
+            if pres[d] <= 0: 
+                if is_floor: 
+                    line_list.append('__')
+                else:
+                    line_list.append('  ')
             else:
-                line_list.append('  ')
-        else:
-            line_list.append(' |')
-            is_floor = False
-        d -= 1
-
-    line_list = line_list[::-1] 
-    line_list += '_' + basename
-    
-    print ''.join(line_list)
-
-    pres[depth] -= 1
+                if is_floor and pres[d] == 1:
+                    line_list.append(' `')
+                else: 
+                    line_list.append(' |')
+                is_floor = False 
+            d -= 1 
+        line_list = line_list[::-1] 
+        line_list += '--' + basename
+        pres[depth] -= 1
+        print ''.join(line_list)
+    else:
+        print 'basename'
 
     if is_dir:
         children = os.listdir(path) 
