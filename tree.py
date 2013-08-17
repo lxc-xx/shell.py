@@ -38,7 +38,7 @@ def explore(path, depth, pres, is_top = False):
         pres[depth] -= 1
         print ''.join(line_list)
     else:
-        print 'basename'
+        print basename
 
     if is_dir:
         children = os.listdir(path) 
