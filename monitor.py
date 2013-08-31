@@ -5,7 +5,7 @@ from email.MIMEBase import MIMEBase
 from email.MIMEText import MIMEText
 
 server_account = 'monitor.py@gmail.com'
-server_pwd = 'monitor@google'
+server_pwd = ''
 server_smtp_address = 'smtp.gmail.com'
 server_smtp_port = 465
 
