@@ -1,7 +1,7 @@
 shell.py
 ========
 
-####Some Python scripts for easier shell work
+####Useful Python scripts for easier shell work
 
 ------------------
 
