@@ -4,8 +4,8 @@ from email.MIMEMultipart import MIMEMultipart
 from email.MIMEBase import MIMEBase
 from email.MIMEText import MIMEText
 
-server_account = 'monitor.py@gmail.com'
-server_pwd = ''
+server_account = 'your_gmail_address'
+server_pwd = 'your_password'
 server_smtp_address = 'smtp.gmail.com'
 server_smtp_port = 465
 
