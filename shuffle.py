@@ -10,7 +10,7 @@ def main(argv):
     random.shuffle(lines)
 
     for line in lines:
-        print line
+        print line.rstrip('\n')
 
     return 0
 
