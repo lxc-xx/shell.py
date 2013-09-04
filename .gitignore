@@ -36,3 +36,4 @@ test/
 
 # Python
 *.pyc
+mail_account.py
