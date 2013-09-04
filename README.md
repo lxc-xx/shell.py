@@ -3,7 +3,9 @@ shell.py
 
 ####Useful Python scripts for easier shell work
 
+
 ------------------
+This is a package contains some Python scripts which makes the your work on Shell easier.
 
 * cpl.py: Copy files in a list
 * minus.py: Minus a file using another file

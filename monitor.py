@@ -3,11 +3,12 @@ import smtplib
 from email.MIMEMultipart import MIMEMultipart
 from email.MIMEBase import MIMEBase
 from email.MIMEText import MIMEText
+import mail_account
 
-server_account = ''
-server_pwd = ''
-server_smtp_address = 'smtp.gmail.com'
-server_smtp_port = 465
+server_account = mail_account.account
+server_pwd = mail_account.password
+server_smtp_address = mail_account.smtp
+server_smtp_port = mail_account.port
 
 
 msg = MIMEText("Hello")
@@ -51,7 +52,7 @@ def main(argv):
 
     try: 
         server = get_mail_server(server_smtp_address, server_smtp_port, server_account, server_pwd)
-    except Error:
+    except Exception:
         print "Error: Failed to connect to mail server"
 
 
@@ -76,7 +77,7 @@ def main(argv):
     
     try: 
         send_mail(server, server_account, 'me@xuanchong.li', subject, content, [])
-    except Error:
+    except Exception:
         print "Error: Failed to send start mail"
 
     return_code = process.wait()
@@ -101,12 +102,12 @@ def main(argv):
             "time":current_time}
     try: 
         send_mail(server, server_account, 'me@xuanchong.li', subject, content, [('stdout.txt',stdout), ('stderr',stderr)])
-    except Error:
+    except Exception:
         print "Error: Failed to send the end mail"
 
     try: 
         server.quit()
-    except Error:
+    except Exception:
         print "Error: Failed to quit the mail server"
 
     return 0
